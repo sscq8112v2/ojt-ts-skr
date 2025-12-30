@@ -1,0 +1,43 @@
+:host {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Apply to all text inside the component */
+:host ::ng-deep * {
+  background: linear-gradient(
+    270deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 400% 400%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: rainbowMove 6s ease infinite;
+
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 0, 255, 0.6),
+    0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Animation */
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
